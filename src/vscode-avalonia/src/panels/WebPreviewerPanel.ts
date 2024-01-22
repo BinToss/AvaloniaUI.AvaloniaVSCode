@@ -20,7 +20,7 @@ export class WebPreviewerPanel {
 	) {
 		const column = previewColumn || vscode.window.activeTextEditor?.viewColumn;
 
-		// If we already have a p anel, show it.
+		// If we already have a panel, show it.
 		if (WebPreviewerPanel.currentPanel) {
 			WebPreviewerPanel.currentPanel._panel.reveal(column);
 			WebPreviewerPanel.currentPanel._update(url);

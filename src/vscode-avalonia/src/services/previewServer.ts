@@ -70,8 +70,15 @@ export class PreviewServer implements IPreviewServer {
 	/**
 	 * Gets whether the preview server is running.
 	 */
-	public get isRunnig() {
+	public get isRunning() {
 		return this._server?.listening;
+	}
+
+	/**
+	 * @deprecated Use {@link isRunning} instead.
+	 */
+	public get isRunnig() {
+		return this.isRunning;
 	}
 
 	/**

@@ -79,7 +79,12 @@ export class AppConstants {
 	static webSocketAddress = (port: number) => `ws://${AppConstants.localhost}:${port}/ws`;
 
 	static readonly updateAssetsMessages: "updateAssetsMessage";
-	static readonly showPreivewMessage: "showPreviewMessage";
+	static readonly showPreviewMessage: "showPreviewMessage";
+
+	/**
+	 * @deprecated Use {@link AppConstants.showPreviewMessage} instead.
+	 */
+	static readonly showPreivewMessage: (typeof AppConstants.showPreviewMessage);
 
 	static readonly showPreviewToSideCommand = "avalonia.showPreviewToSide";
 	static readonly previewerAssetsCommand = "avalonia.createPreviewerAssets";
