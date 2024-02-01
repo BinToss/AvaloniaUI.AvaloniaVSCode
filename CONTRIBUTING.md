@@ -4,7 +4,7 @@ Welcome to Avalonia Extension for VS Code! We appreciate your interest in contri
 
 ## System Requirements
 
-1. Dotnet core 7.0, you can dowloand it from [here](https://dotnet.microsoft.com/en-us/)
+1. Dotnet core 7.0, you can download it from [here](https://dotnet.microsoft.com/en-us/)
 2. NodeJS, npm and yarn
 3. Latest Visual Studio Code
 

@@ -66,7 +66,7 @@ Fixed the blocker issue [#65](https://github.com/AvaloniaUI/AvaloniaVSCode/issue
 ## [0.0.18] - 08 September 2023
 ### Fixes
 
-- Extenstion not activating #39
+- Extension not activating #39
 - Extension fails to launch child process if VS Code path has spaces #41
 
 
@@ -83,13 +83,13 @@ Fixed the blocker issue [#65](https://github.com/AvaloniaUI/AvaloniaVSCode/issue
 
 ## [0.0.11] - 24 August 2023
 
-- Improve the XAML previewer performace
+- Improve the XAML previewer performance
 - Support Avalonia xplat solution
 
 ### Known issues
 
 1. Previewer may take up to 10 seconds to activate for the first time if you’re using Avalonia `v0.10.*`
-2. You must build the project before using the preivewer
+2. You must build the project before using the previewer
 3. Previewer may not be visible first time; switch to XAML code tab or save the file
 
 ## [0.0.6] - 03 August 2023
@@ -114,8 +114,8 @@ Fixed the blocker issue [#65](https://github.com/AvaloniaUI/AvaloniaVSCode/issue
 ## [0.0.2] - 12 July 2023
 
 - Offers previewer zoom in/out functionality
-- Previewer now has grid bacground
-- Previewer changes backgroud based on VS Code theme
+- Previewer now has grid background
+- Previewer changes background based on VS Code theme
 
 ### Known issues
 
@@ -125,10 +125,10 @@ Fixed the blocker issue [#65](https://github.com/AvaloniaUI/AvaloniaVSCode/issue
 
 - Initial release
 - Offers XAML auto-complete
-- Offers Basic XMAL Previewer
+- Offers Basic XAML Previewer
 
 ### Known issues
 
 - Extension works when only Avalonia project in the workspace
-- You cannot zoom-in or out previwer panel
+- You cannot zoom-in or out previewer panel
 - Auto-complete lists duplicate items

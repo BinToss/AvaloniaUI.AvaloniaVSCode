@@ -55,7 +55,7 @@
         ],
         "extensions": [
           ".axaml",
-          ".axml"
+          ".xaml"
         ],
         "configuration": "./AXAML.language-configuration.json",
         "icon": {
@@ -74,7 +74,7 @@
     "commands": [
       {
         "command": "avalonia.createPreviewerAssets",
-        "title": "Create previwer assets",
+        "title": "Create previewer assets",
         "category": "Avalonia"
       },
       {

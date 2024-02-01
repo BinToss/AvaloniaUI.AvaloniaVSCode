@@ -64,8 +64,8 @@ export async function purgeSolutionDataFile() {
 	fs.removeSync(solutionDataFile);
 }
 
-function updateSolutionModel(context: vscode.ExtensionContext, jsonContect: string) {
-	const data = JSON.parse(jsonContect);
+function updateSolutionModel(context: vscode.ExtensionContext, jsonContent: string) {
+	const data = JSON.parse(jsonContent);
 	context.workspaceState.update(AppConstants.solutionData, data);
 }
 
@@ -82,7 +82,7 @@ async function getSolutionFile(): Promise<string | undefined> {
 
 async function isOutputExists() {
 	const outputPath = await getSolutionDataFile();
-	logger.appendLine(`[EXT - INFO] Solution data path path: ${outputPath}`);
+	logger.appendLine(`[EXT - INFO] Solution data path: ${outputPath}`);
 	return { outputPath, isExist: fs.pathExistsSync(outputPath!) };
 }
 

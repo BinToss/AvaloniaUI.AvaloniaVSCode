@@ -72,7 +72,7 @@ export class WebPreviewerPanel {
 	 */
 	public dispose() {
 		WebPreviewerPanel.currentPanel = undefined;
-		logger.appendLine("Previwer panel disposed");
+		logger.appendLine("Previewer panel disposed");
 
 		// Dispose of the current webview panel
 		this._panel.dispose();
