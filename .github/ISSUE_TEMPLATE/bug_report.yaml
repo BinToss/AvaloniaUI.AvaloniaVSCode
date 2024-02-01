@@ -38,7 +38,7 @@ body:
       attributes:
           label: Relevant log output
           description: Please attach any relevant log output. You can find the logs in the Output panel (View -> Output) under the Avalonia for VS Code channel.
-          render: shell
+          render: Shell
       validations:
           required: true
     - type: textarea
