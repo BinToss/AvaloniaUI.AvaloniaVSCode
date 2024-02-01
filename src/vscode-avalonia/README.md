@@ -4,7 +4,7 @@ Avalonia is a cross-platform XAML-based UI framework providing a flexible stylin
 
 The Avalonia for Visual Studio Code Extension contains support for Avalonia XAML autocomplete and previewer.
 
-Follow the [contribution guide](CONTRIBUTING.md) if you want to help us build the extension
+Follow the [contribution guide](../../CONTRIBUTING.md) if you want to help us build the extension
 
 > **NOTE:** Requires .NET Core 8.0
 
