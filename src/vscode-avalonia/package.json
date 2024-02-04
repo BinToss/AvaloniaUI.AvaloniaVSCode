@@ -71,6 +71,11 @@
         "path": "./AXAML.tmLanguage.json"
       }
     ],
+    "xmlLanguageParticipants": [
+      {
+        "languageId": "AXAML"
+      }
+    ],
     "commands": [
       {
         "command": "avalonia.createPreviewerAssets",

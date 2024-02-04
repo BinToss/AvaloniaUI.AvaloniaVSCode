@@ -14,7 +14,17 @@ export async function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "Avalonia UI" is now active!');
 
 	const commandManager = new CommandManager();
-	context.subscriptions.push(registerAvaloniaCommands(commandManager, context));
+	context.subscriptions.push(
+		registerAvaloniaCommands(commandManager, context),
+		vscode.extensions.onDidChange(() => {
+			/*  When AXAML is activated (that's us), try activating redhat.vscode-xml so its formatter is available.
+				We inform redhat.vscode-xml of our XML-based language via contributes.xmlLanguageParticipants in our package.json. See https://github.com/redhat-developer/vscode-xml/blob/main/docs/Extensions.md#contribution-in-packagejson
+			*/
+			const xml = vscode.extensions.getExtension("redhat.vscode-xml");
+			if (xml && !xml.isActive) {
+				xml.activate();
+			}
+		}));
 
 	if (!vscode.workspace.workspaceFolders) {
 		return;
