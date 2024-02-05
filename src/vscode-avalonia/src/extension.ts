@@ -7,6 +7,7 @@ import { registerAvaloniaCommands } from "./commands";
 import { CommandManager } from "./commandManager";
 import * as util from "./util/Utilities";
 import { AppConstants, logger } from "./util/Utilities";
+import { initExtensionIntegrations } from "./extensionIntegrations";
 
 let languageClient: lsp.LanguageClient | null = null;
 
@@ -15,16 +16,8 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	const commandManager = new CommandManager();
 	context.subscriptions.push(
-		registerAvaloniaCommands(commandManager, context),
-		vscode.extensions.onDidChange(() => {
-			/*  When AXAML is activated (that's us), try activating redhat.vscode-xml so its formatter is available.
-				We inform redhat.vscode-xml of our XML-based language via contributes.xmlLanguageParticipants in our package.json. See https://github.com/redhat-developer/vscode-xml/blob/main/docs/Extensions.md#contribution-in-packagejson
-			*/
-			const xml = vscode.extensions.getExtension("redhat.vscode-xml");
-			if (xml && !xml.isActive) {
-				xml.activate();
-			}
-		}));
+		registerAvaloniaCommands(commandManager, context)
+	);
 
 	if (!vscode.workspace.workspaceFolders) {
 		return;
@@ -73,6 +66,8 @@ export async function activate(context: vscode.ExtensionContext) {
 		}
 	);
 	context.subscriptions.push(insertCmd);
+
+	initExtensionIntegrations(context);
 
 	languageClient = await createLanguageService();
 
