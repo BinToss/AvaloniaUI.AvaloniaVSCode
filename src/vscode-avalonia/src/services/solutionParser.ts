@@ -82,7 +82,7 @@ async function getSolutionFile(): Promise<string | undefined> {
 
 async function isOutputExists() {
 	const outputPath = await getSolutionDataFile();
-	logger.appendLine(`[EXT - INFO] Solution data path: ${outputPath}`);
+	logger.info(`[EXT - INFO] Solution data path: ${outputPath}`);
 	return { outputPath, isExist: fs.pathExistsSync(outputPath!) };
 }
 
@@ -108,7 +108,7 @@ async function parseSolution(context: vscode.ExtensionContext): Promise<string> 
 
 		previewer.on("spawn", () => {
 			jsonContent = "";
-			logger.appendLine(`parser process args: ${previewer.spawnargs}`);
+			logger.info(`parser process args: ${previewer.spawnargs}`);
 		});
 
 		previewer.stdout.on("data", (data) => {
@@ -124,8 +124,11 @@ async function parseSolution(context: vscode.ExtensionContext): Promise<string> 
 			if (code === 0) {
 				updateSolutionModel(context, jsonContent);
 				resolve(jsonContent);
+				logger.info(`parser process exited ${code}`);
 			}
-			logger.appendLine(`parser process exited ${code}`);
+			else {
+				logger.error(`parser process exited ${code}`);
+			}
 		});
 	});
 }

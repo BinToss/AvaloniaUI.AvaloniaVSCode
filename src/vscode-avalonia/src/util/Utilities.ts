@@ -33,6 +33,9 @@ export function getFileName(filePath: string): string {
 export function getExecutableProject(solution: sm.Solution): sm.Project | undefined {
 	const projs = solution.projects.filter((p) => p.outputType === "WinExe");
 	const proj = projs.length > 0 ? projs[0] : undefined;
+	if (proj && proj.designerHostPath.trim() !== '') {
+		logger.info("designerHostPath: " + proj.designerHostPath);
+	}
 
 	return proj;
 }

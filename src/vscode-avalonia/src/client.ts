@@ -4,7 +4,7 @@ import { getDotnetRuntimePath, getLanguageServerPath as getAvaloniaServerPath } 
 import { avaloniaLanguageId, logger } from "./util/Utilities";
 
 export async function createLanguageService(): Promise<lsp.LanguageClient> {
-	logger.appendLine("Creating language service");
+	logger.info("Creating language service");
 
 	const serverOptions = await getServerStartupOptions();
 	let outputChannel = logger;

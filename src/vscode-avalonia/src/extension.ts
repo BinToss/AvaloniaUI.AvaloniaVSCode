@@ -77,7 +77,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	languageClient = await createLanguageService();
 
 	try {
-		logger.appendLine("Starting Avalonia Language Server...");
+		logger.info("Starting Avalonia Language Server...");
 		await languageClient.start();
 	} catch (error) {
 		logger.error(`Failed to start Avalonia Language Server. ${error}`);
@@ -88,5 +88,5 @@ export async function activate(context: vscode.ExtensionContext) {
 // This method is called when your extension is deactivated
 export async function deactivate() {
 	await languageClient?.stop();
-	logger.appendLine("Language client stopped");
+	logger.info("Language client stopped");
 }

@@ -40,7 +40,7 @@ export class CreatePreviewerAssets implements Command {
 					//TODO use this for solution storage
 					this._context.workspaceState.update(AppConstants.previewerParamState, output);
 
-					logger.appendLine(`Previewer assets generated at ${output.previewerPath}`);
+					logger.info(`Previewer assets generated at ${output.previewerPath}`);
 					if (output.previewerPath.trim() === '') {
 						// if previewer asset generation failed, yank UI focus to our logger channel.
 						logger.error('Previewer path is empty');
@@ -61,7 +61,7 @@ export class CreatePreviewerAssets implements Command {
 				logger.error(`[ERROR]  dotnet build error: ${data}`);
 			});
 			dotnet.stdout.on("data", (data) => {
-				logger.appendLine(`${data}`);
+				logger.info(`${data}`);
 			});
 			dotnet.on("close", async (code) => {
 				if (code === 0) {
