@@ -11,10 +11,10 @@
 		"resolveJsonModule": true,
 		"rootDir": "src",
 		"strict": true,
-		"skipLibCheck": true,
+		"skipLibCheck": true
 	},
 	"exclude": [
 		"node_modules",
 		"out"
-	],
+	]
 }
