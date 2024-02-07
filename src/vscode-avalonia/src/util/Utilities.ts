@@ -69,37 +69,5 @@ String.prototype.putInQuotes = function (this: string): string {
 	return `"${this}"`;
 };
 
-/**
- * Various app constants
- */
-export class AppConstants {
-	static readonly insertPropertyCommandId = "avalonia.InsertProperty";
-	static readonly previewerParamState = "previewerParams";
-	static readonly previewProcessCommandId = "avalonia.previewProcess";
-	static readonly localhost = "127.0.0.1";
-	static readonly htmlUrl = `http://${AppConstants.localhost}`;
-
-	static webSocketAddress = (port: number) => `ws://${AppConstants.localhost}:${port}/ws`;
-
-	static readonly updateAssetsMessages: "updateAssetsMessage";
-	static readonly showPreviewMessage: "showPreviewMessage";
-
-	/**
-	 * @deprecated Use {@link AppConstants.showPreviewMessage} instead.
-	 */
-	static readonly showPreivewMessage: (typeof AppConstants.showPreviewMessage);
-
-	static readonly showPreviewToSideCommand = "avalonia.showPreviewToSide";
-	static readonly previewerAssetsCommand = "avalonia.createPreviewerAssets";
-
-	static readonly previewerPanelViewType = "avaloniaPreviewer";
-	static readonly winExe = "WinExe";
-
-	static readonly solutionData = "avalonia.solutionData";
-
-	static readonly updatePreviewerContent = "avalonia.updatePreviewerContext";
-
-	static readonly extensionId = "AvaloniaTeam.vscode-avalonia";
-
-	static readonly newProjectCommandId = "avalonia.newProject";
-}
+/** @deprecated Import from "Constants" instead. */
+export { AppConstants } from "./Constants";
