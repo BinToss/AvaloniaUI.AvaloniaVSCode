@@ -6,7 +6,7 @@ import { PreviewServer } from "../services/previewServer";
 import { WebPreviewerPanel } from "../panels/WebPreviewerPanel";
 
 export class UpdatePreviewerContext implements Command {
-	constructor(private readonly _context: vscode.ExtensionContext) {}
+	constructor(private readonly _context: vscode.ExtensionContext) { }
 	public readonly id = AppConstants.updatePreviewerContent;
 
 	public async execute(mainUri?: vscode.Uri, allUris?: vscode.Uri[]) {

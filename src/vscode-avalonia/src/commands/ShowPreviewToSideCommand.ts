@@ -9,7 +9,7 @@ export class ShowPreviewToSideCommand implements Command {
 	constructor(
 		private readonly _context: vscode.ExtensionContext,
 		private readonly _processManager: PreviewProcessManager
-	) {}
+	) { }
 	public readonly id = AppConstants.showPreviewToSideCommand;
 
 	public async execute(mainUri?: vscode.Uri, allUris?: vscode.Uri[]) {

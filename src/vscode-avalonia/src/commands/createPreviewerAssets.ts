@@ -95,5 +95,5 @@ export class CreatePreviewerAssets implements Command {
 			});
 		});
 	}
-	constructor(private readonly _context: vscode.ExtensionContext) {}
+	constructor(private readonly _context: vscode.ExtensionContext) { }
 }
