@@ -173,8 +173,5 @@
   },
   "extensionDependencies": [
     "ms-dotnettools.vscode-dotnet-runtime"
-  ],
-  "extensionPack": [
-    "redhat.vscode-xml"
   ]
 }
