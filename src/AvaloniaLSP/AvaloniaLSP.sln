@@ -1,6 +1,7 @@
-
-Microsoft Visual Studio Solution File, Format Version 12.00
-#
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28701.123
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaLanguageServer", "AvaloniaLanguageServer\AvaloniaLanguageServer.csproj", "{0DAE7CA7-F8E8-46FB-94D6-4D7B4E19637D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.Ide.CompletionEngine", "..\AvaloniaVS\CompletionEngine\Avalonia.Ide.CompletionEngine\Avalonia.Ide.CompletionEngine.csproj", "{8CC4DD56-849C-432A-9811-A1FA7A50C869}"
