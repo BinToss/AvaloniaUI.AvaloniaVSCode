@@ -4,7 +4,7 @@ Welcome to Avalonia Extension for VS Code! We appreciate your interest in contri
 
 ## System Requirements
 
-1. Dotnet core 7.0, you can download it from [here](https://dotnet.microsoft.com/en-us/)
+1. .NET SDK 8.0, you can download it from [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 2. NodeJS, npm and yarn
 3. Latest Visual Studio Code
 
@@ -12,8 +12,8 @@ Welcome to Avalonia Extension for VS Code! We appreciate your interest in contri
 
 1. Fork and Clone the repository, don't forget to get submodules
 
-    `git clone --recursive https://github.com/AvaloniaUI/AvaloniaVSCode`
-    
+   `git clone --recursive https://github.com/AvaloniaUI/AvaloniaVSCode`
+
 2. Run the `build.sh`, currently repo do not have build script for Windows
 
 ## How to contribute
