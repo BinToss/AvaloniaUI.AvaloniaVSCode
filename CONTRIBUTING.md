@@ -14,7 +14,7 @@ Welcome to Avalonia Extension for VS Code! We appreciate your interest in contri
 
    `git clone --recursive https://github.com/AvaloniaUI/AvaloniaVSCode`
 
-2. Run the `build.sh`, currently repo do not have build script for Windows
+2. Run the `build.sh` or `build.ps1`.
 
 ## How to contribute
 
