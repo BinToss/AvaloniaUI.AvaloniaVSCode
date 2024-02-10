@@ -27,6 +27,27 @@ public class Workspace
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="uri"></param>
+    /// <returns>
+    ///     <see langword="null"/> when a Solution file could not be found in the parent directories<br/>
+    ///     -AND-<br/>
+    ///     No project has been successfully evaluated yet -OR- the most recent project did not have a Solution file.<br/>
+    ///     <br/>
+    ///     Else, an instance of Metadata.<br/>
+    ///     If a metadatum is only available when targeting a particular TargetFramework or RuntimeIdentifier, it is included. Duplicate entries are discarded.
+    /// </returns>
+    /// <exception cref="NullReferenceException">
+    ///     Failed to deserialize Solution data file
+    /// </exception>
+    /// <exception cref="Exception">
+    ///     No projects match the given criteria
+    ///     -OR-
+    ///     Failed to build completion metadata
+    /// </exception>
+    /// <exception cref="AggregateException"></exception>
     Metadata? BuildCompletionMetadata(DocumentUri uri)
     {
         var slnFile = SolutionName(uri) ?? Path.GetFileNameWithoutExtension(ProjectInfo?.ProjectDirectory);
@@ -67,7 +88,7 @@ public class Workspace
         return metadata;
     }
 
-    // TODO: prefer getting Solution from csdevkit (roslyn language server) or OmniSharp/Ionide, or fallback to our impl.
+    // TODO: allow user to prefer Solution selected via other extensions e.g. csdevkit (roslyn language server), OmniSharp/Ionide, or AvaloniaLSP. String-Enum value?
     static string? SolutionName(DocumentUri uri)
     {
         string path = Utils.FromUri(uri);
