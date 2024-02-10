@@ -41,10 +41,30 @@ public class Workspace
             return null;
 
         string content = File.ReadAllText(slnFilePath);
-        var package = JsonSerializer.Deserialize<SolutionData>(content);
-        var exeProj = package!.GetExecutableProject() ?? throw new Exception($"No projects found with OutputType {SolutionData.OutputTypeWinExe}.");
+        SolutionData package = JsonSerializer.Deserialize<SolutionData>(content)
+            ?? throw new NullReferenceException("Failed to deserialize Solution data file.");
+        /*  Includes projects' permutations */
+        var exeProjects = package.GetExecutableProjects();
+        if (exeProjects.Count() is 0)
+            throw new Exception($"No projects found with OutputType {SolutionData.OutputTypeWinExe}.");
 
-        return _metadataReader.GetForTargetAssembly(exeProj?.TargetPath ?? "");
+        Metadata metadata = new();
+        foreach (Project exeProj in exeProjects)
+        {
+            try // $(IntermediateOutputPath)/.../Avalonia/references
+            {
+                metadata.AddMetadata(_metadataReader.GetForTargetAssembly(new AvaloniaCompilationAssemblyProvider(exeProj.IntermediateOutputPath)));
+            }
+            catch (Exception e)
+            {
+                throw new Exception(
+                    $"Failed to build completion metadata. IntermediateOutputPath: {exeProj.IntermediateOutputPath}",
+                    e
+                );
+            }
+        }
+
+        return metadata;
     }
 
     // TODO: prefer getting Solution from csdevkit (roslyn language server) or OmniSharp/Ionide, or fallback to our impl.
