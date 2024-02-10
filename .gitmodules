@@ -4,3 +4,7 @@
 [submodule "src/SolutionParser"]
 	path = src/SolutionParser
 	url = https://github.com/prashantvc/SolutionParser/
+[submodule "src/vscode-csharp"]
+	path = src/vscode-csharp
+	url = https://github.com/dotnet/vscode-csharp
+	branch = prerelease
