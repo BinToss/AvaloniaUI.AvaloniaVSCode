@@ -13,8 +13,17 @@
 		"strict": true,
 		"skipLibCheck": true
 	},
+	"include": [
+		"**/*",
+		"node_modules/vscode-csharp/typings/vscode-tasks.d.ts",
+		"node_modules/vscode-csharp/node_modules/http-proxy-agent/dist/*",
+		"node_modules/vscode-csharp/node_modules/https-proxy-agent/dist/*"
+	],
 	"exclude": [
-		"node_modules",
+		"node_modules/vscode-csharp/omnisharptest",
+		"node_modules/vscode-csharp/test",
+		"node_modules/vscode-csharp/baseJestConfig.ts",
+		"node_modules/vscode-csharp/jest.config.ts",
 		"out"
 	]
 }
