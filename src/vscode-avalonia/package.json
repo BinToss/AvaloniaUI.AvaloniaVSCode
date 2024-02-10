@@ -137,7 +137,6 @@
   },
   "scripts": {
     "install:all": "yarn install",
-    "postinstall": "yarn install",
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
