@@ -12,9 +12,11 @@ namespace AvaloniaLanguageServer.Models
         [JsonPropertyName("files")]
         public ProjectFile[] Files { get; set; }
 
+        public const string OutputTypeWinExe = "WinExe";
+
         public Project? GetExecutableProject()
         {
-            return Projects.FirstOrDefault(project => project.OutputType == "WinExe");
+            return Projects.FirstOrDefault(project => project.OutputType == OutputTypeWinExe);
         }
     }
 

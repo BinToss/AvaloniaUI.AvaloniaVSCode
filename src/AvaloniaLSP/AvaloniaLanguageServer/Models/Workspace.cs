@@ -42,7 +42,7 @@ public class Workspace
 
         string content = File.ReadAllText(slnFilePath);
         var package = JsonSerializer.Deserialize<SolutionData>(content);
-        var exeProj = package!.GetExecutableProject();
+        var exeProj = package!.GetExecutableProject() ?? throw new Exception($"No projects found with OutputType {SolutionData.OutputTypeWinExe}.");
 
         return _metadataReader.GetForTargetAssembly(exeProj?.TargetPath ?? "");
     }
