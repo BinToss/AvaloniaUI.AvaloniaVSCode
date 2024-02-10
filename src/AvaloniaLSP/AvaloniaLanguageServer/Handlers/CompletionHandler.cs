@@ -33,8 +33,7 @@ public class CompletionHandler : CompletionHandlerBase
         var metadata = await InitializeCompletionEngineAsync(request.TextDocument.Uri);
         if (metadata == null)
         {
-            return new CompletionList(new[]
-            {
+            return new CompletionList([
                 new CompletionItem
                 {
                     Label = "Build the project",
@@ -43,7 +42,7 @@ public class CompletionHandler : CompletionHandlerBase
                     Command = Command.Create("avalonia.createPreviewerAssets", new {triggerCodeComplete = true}),
                     InsertText = " "
                 }
-            });
+            ]);
         }
 
         var set = _completionEngine.GetCompletions(metadata!, text, text.Length);
