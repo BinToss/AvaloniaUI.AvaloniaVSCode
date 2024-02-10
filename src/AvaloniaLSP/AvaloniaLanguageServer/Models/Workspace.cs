@@ -47,7 +47,8 @@ public class Workspace
         return _metadataReader.GetForTargetAssembly(exeProj?.TargetPath ?? "");
     }
 
-    string? SolutionName(DocumentUri uri)
+    // TODO: prefer getting Solution from csdevkit (roslyn language server) or OmniSharp/Ionide, or fallback to our impl.
+    static string? SolutionName(DocumentUri uri)
     {
         string path = Utils.FromUri(uri);
         string root = Directory.GetDirectoryRoot(path);
