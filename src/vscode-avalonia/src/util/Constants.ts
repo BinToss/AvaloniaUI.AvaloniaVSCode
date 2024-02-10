@@ -1,7 +1,5 @@
 import { contributes } from "../../package.json";
 
-export default AppConstants;
-
 /**
  * Various app constants
  */
@@ -44,3 +42,5 @@ export namespace AppConstants {
 
     export const newProjectCommandId = "avalonia.newProject";
 }
+
+export default AppConstants;
