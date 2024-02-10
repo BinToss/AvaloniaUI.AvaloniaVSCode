@@ -1,11 +1,9 @@
-
 using System.Text.Json;
 using Avalonia.Ide.CompletionEngine;
 using Avalonia.Ide.CompletionEngine.AssemblyMetadata;
 using Avalonia.Ide.CompletionEngine.DnlibMetadataProvider;
 using AvaloniaLanguageServer.Services;
 using AvaloniaLanguageServer.Utilities;
-
 
 namespace AvaloniaLanguageServer.Models;
 
@@ -54,7 +52,6 @@ public class Workspace
 
         if (slnFile == null)
             return null;
-
 
         var slnFilePath = Path.Combine(Path.GetTempPath(), $"{slnFile}.json");
 
