@@ -45,23 +45,21 @@ public class CompletionHandler : CompletionHandlerBase
             ]);
         }
 
-        var set = _completionEngine.GetCompletions(metadata!, text, text.Length);
-
-        var completions = set?.Completions
+        var set = _completionEngine.GetCompletions(metadata, text, text.Length)?.Completions ?? [];
+        var completions = new List<CompletionItem>(
+            set
             .Where(p => !p.DisplayText.Contains('`'))
             .Select(p => new CompletionItem
             {
                 Label = p.DisplayText,
                 Detail = p.Description,
                 InsertText = p.InsertText,
-                Kind = GetCompletionItemKind(p.Kind),
-            });
+                Kind = GetCompletionItemKind(p.Kind)
+            }));
 
-
-        if (completions == null)
-            return new CompletionList(true);
-
-        return new CompletionList(completions, isIncomplete: false);
+        return completions.Count == 0
+            ? new CompletionList(true)
+            : new CompletionList(completions, isIncomplete: false);
     }
 
     protected override CompletionRegistrationOptions CreateRegistrationOptions
