@@ -65,12 +65,7 @@ export async function activate(context: vscode.ExtensionContext) {
 				}
 				vscode.commands.executeCommand("editor.action.triggerSuggest");
 			}
-		),
-		vscode.workspace.onDidChangeConfiguration((e) => {
-			if (e.affectsConfiguration('axaml.logLevel')) {
-				vscode.commands.executeCommand('workbench.action.setLogLevel', logger.name, vscode.workspace.getConfiguration('axaml.logLevel'));
-			}
-		})
+		)
 	);
 
 	// non-critical. Don't await.
