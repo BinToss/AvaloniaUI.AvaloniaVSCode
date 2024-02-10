@@ -71,7 +71,9 @@ public class Workspace
         {
             try // $(IntermediateOutputPath)/.../Avalonia/references
             {
-                metadata.AddMetadata(_metadataReader.GetForTargetAssembly(new AvaloniaCompilationAssemblyProvider(exeProj.IntermediateOutputPath)));
+                var md = _metadataReader.GetForTargetAssembly(new AvaloniaCompilationAssemblyProvider(exeProj.IntermediateOutputPath));
+                if (md is not null)
+                    metadata.AddMetadata(md);
             }
             catch (Exception e)
             {
