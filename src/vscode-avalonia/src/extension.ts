@@ -11,6 +11,9 @@ import { initExtensionIntegrations } from "./extensionIntegrations";
 
 let languageClient: lsp.LanguageClient | null = null;
 
+/**
+ * @returns undefined when no workspace folders are open.
+ */
 export async function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "Avalonia UI" is now active!');
 
