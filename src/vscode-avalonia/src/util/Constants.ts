@@ -4,11 +4,11 @@ import { contributes } from "../../package.json";
  * Various app constants
  */
 export namespace AppConstants {
-    export const _contributes = contributes;
+    export const contributions = contributes;
     // todo: implement instance methods using this configuration object to read/write workspace settings. This feels like it should be part of VSCode's API.
-    export const allConfigurationIDs = contributes.configuration;
+    export const allConfigurationIDs = contributions.configuration;
     // todo: use this for API tests! Compare returned array to explicitly defined constants.
-    export const allCommandIDs = contributes.commands.map((v) => v.command);
+    export const allCommandIDs = contributions.commands.map((v) => v.command);
 
     export const insertPropertyCommandId = "avalonia.InsertProperty";
     export const previewerParamState = "previewerParams";
