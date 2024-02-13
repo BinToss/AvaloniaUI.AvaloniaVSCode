@@ -110,16 +110,12 @@ async function isOutputExists() {
 }
 
 async function parseSolution(context: vscode.ExtensionContext): Promise<string> {
-	const avaloniaExtn = vscode.extensions.getExtension(extensionId);
-	if (!avaloniaExtn) {
-		throw new Error("Could not find sample extension.");
-	}
 	const solutionPath = await getSolutionFile();
 	if (!solutionPath) {
 		throw new Error("Could not find solution file.");
 	}
 
-	const parserLocation = path.join(avaloniaExtn.extensionPath, "solutionParserTool", "SolutionParser.dll");
+	const parserLocation = path.join(context.extensionPath, "solutionParserTool", "SolutionParser.dll");
 
 	return new Promise<string>((resolve, reject) => {
 		var jsonContent = "";
